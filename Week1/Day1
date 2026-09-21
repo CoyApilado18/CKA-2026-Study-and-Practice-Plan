@@ -1,0 +1,19 @@
+Week 1 – Cluster architecture, etcd, upgrades, storage
+
+# kodekloud Cluster Archictecture notes:
+High-level overview of cluster architecture
+
+Master node: control-plane components (manage, plan, schedule, monitor nodes)
+- node controllers - replication controller, node controller etc.
+- etcd - key value store. Stores information of the cluster, database fo the cluster
+- scheduler - load containers on worker nodes
+- kube-apiserver - responsible for orhestrating all the operations within the cluster
+
+Worker nodes: (host application as containers)
+- kubelet - is an agent installed in the worker nodes that listens instructions from the kube-api server and manages containers. 
+- containers - docker/containerd
+- pods - think of it as "wrapper" for the containers
+- kube-proxy service - is responsible to create rules to allow containers (applications) from one node to another to communicate (via services ) with each other in a cluster. 
+
+
+Etcd - 
